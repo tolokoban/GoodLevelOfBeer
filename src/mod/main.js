@@ -67,7 +67,10 @@ function updateLevelsList() {
 }
 
 function initLevel(levelNumber) {
-  levelNumber = Math.min(LEVELS.length - 1, levelNumber + Math.floor(Math.random() * 16));
+console.log("----------------------------------------");
+console.log(levelNumber);
+  levelNumber = Math.min(LEVELS.length  / 5 - 1, levelNumber + Math.floor(Math.random() * 16));
+console.log(levelNumber);
   var level = parseLevel(levelNumber);
   currentLevel = level;
   state = {

@@ -85,6 +85,18 @@ body > section#welcome {
     font-size: 150%;
 }
 
+#levels {
+    text-align: center;
+}
+
+button.level {
+    width: 5rem;
+    height: 5rem;
+    margin: .4rem;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
 #screen > div > div.beer {
     position: absolute;
     left: 0;
