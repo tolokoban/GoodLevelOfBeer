@@ -1,0 +1,159 @@
+*{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}
+
+::-moz-selection { background: none; }
+::selection      { background: none; }
+
+html, body {
+    color: #000;
+    background-color: #e6b380;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+body > section {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    display: none;
+    padding: 1rem;
+}
+
+button {
+    padding: .5rem;
+    font-size: 1rem;
+}
+
+body > section#welcome {
+    display: block;
+}
+
+@media (orientation: portrait) {
+    html {
+        font-size: 5vw;
+    }
+}
+@media (orientation: landscape) {
+    html {
+        font-size: 5vh;
+    }
+}
+
+#screen {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 20rem;
+    height: 20rem;
+}
+
+#screen > div {
+    font-size: 130%;
+    position: absolute;
+    width: 6rem;
+    height: 6rem;
+    margin: -3rem -3rem;
+    border: .5rem solid #000;
+    border-top: none;
+    border-radius: 0 0 1rem 1rem;
+    text-align: center;
+    padding: 0;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.current {
+    font-size: 200%;
+}
+
+.target {
+    font-size: 150%;
+}
+
+#screen > div > div.beer {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 6rem;
+    height: 6rem;
+    background-repeat:   no-repeat;
+    background-size:     6rem 6rem;
+    background-image:    url(main/beer.jpg);
+    transition: top 1s;
+}
+
+#screen > div > div {
+    position: relative;
+    line-height: 3rem;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    vertical-align: top;
+}
+
+#screen > div > div.line2 {
+    line-height: 2rem;
+}
+
+#screen > div.src {
+    box-shadow: 0 0 .5rem .5rem red;
+}
+
+#screen > div.dst {
+    box-shadow: 0 0 .5rem .5rem cyan;
+}
+
+#A, #A-drag {
+    left: 15.196rem;
+    top: 13rem;
+}
+
+#B, #B-drag {
+    left: 4.804rem;
+    top: 13rem;
+}
+
+#C, #C-drag {
+    left: 10rem;
+    top: 4rem;
+}
+
+div#screen > div#A-drag, 
+div#screen > div#B-drag, 
+div#screen > div#C-drag {
+    border-radius: 100%;
+    width: 6rem;
+    height: 6rem;
+    margin: -3rem -3rem;
+    background-color: rgba(255,255,255,.3);
+    border: 1px solid #000;
+    box-shadow: .5rem .5rem .1rem rgba(0,0,0,.3), .5rem .5rem .1rem rgba(0,0,0,.3) inset;
+    opacity: 0;
+}
+
+div#screen > div#A-drag.show, 
+div#screen > div#B-drag.show, 
+div#screen > div#C-drag.show {
+    opacity: 1;
+}
+
+#back {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}

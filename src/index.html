@@ -1,0 +1,31 @@
+<w:html app="main">
+    <script src="hand.js"></script>
+    <section id="welcome">
+        <h1>Le bon niveau de bière</h1>
+        <button onclick="Main.show('level-selection')">Commencer</button>
+    </section>
+    <section id="level-selection">
+        <h1>Choisissez votre niveau</h1>
+        <div id="levels"/>
+    </section>
+    <section id="game">
+        <div id ="screen">
+            <w:multiply x="A;B;C">
+                <div id="{{x}}">
+                    <div class="beer" id="{{x}}-beer"></div>
+                    <div>
+                        <span class="current" id="{{x}}-current"></span> / 
+                        <span class="capacity" id="{{x}}-capacity"></span>
+                    </div>
+                    <div class="line2">
+                        <span class="target" id="{{x}}-target"></span>
+                    </div>                    
+                </div>
+                <div id="{{x}}-drag"></div>
+            </w:multiply>
+        </div>
+        <button id="back" onclick="Main.show('level-selection')">Retour</button>
+    </section>
+    <section id="success">
+    </section>
+</w:html>

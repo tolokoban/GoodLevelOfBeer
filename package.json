@@ -1,0 +1,30 @@
+{
+  "name": "GoodLevelOfBeer",
+  "version": "1.0.0",
+  "description": "Firefox OS Game in which you must transfer beer from a glass to another in order to get the correct levels in each glass.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "tfw": "node node_modules/toloframework/bin/tfw.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tolokoban/GoodLevelOfBeer.git"
+  },
+  "keywords": [
+    "FxOS",
+    "Firefox",
+    "OS",
+    "Game",
+    "Beer"
+  ],
+  "author": "Tolokoban",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/tolokoban/GoodLevelOfBeer/issues"
+  },
+  "homepage": "https://github.com/tolokoban/GoodLevelOfBeer",
+  "dependencies": {
+    "toloframework": "0.17.3"
+  }
+}
