@@ -14,8 +14,7 @@
                 <div id="{{x}}">
                     <div class="beer" id="{{x}}-beer"></div>
                     <div>
-                        <span class="current" id="{{x}}-current"></span> / 
-                        <span class="capacity" id="{{x}}-capacity"></span>
+                        <span class="current" id="{{x}}-current"></span>/<span class="capacity" id="{{x}}-capacity"></span>
                     </div>
                     <div class="line2">
                         <span class="target" id="{{x}}-target"></span>
@@ -24,7 +23,18 @@
                 <div id="{{x}}-drag"></div>
             </w:multiply>
         </div>
-        <button id="back" onclick="Main.show('level-selection')">Retour</button>
+        <div id="info-table">
+            <div>
+                <div>
+                    <div id="info"></div>
+                </div>
+                <div>
+                    <div>
+                        <button onclick="Main.show('level-selection')">Retour</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
     <section id="success">
     </section>

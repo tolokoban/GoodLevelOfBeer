@@ -1,10 +1,10 @@
 exports.config={
     name:"GoodLevelOfBeer",
-    version:"0.0.73",
+    version:"0.0.101",
     major:0,
     minor:0,
-    revision:73,
-    date:new Date(2015,7,12,19,10,9)
+    revision:101,
+    date:new Date(2015,7,18,16,26,55)
 };
 var currentLang = null;
 exports.lang = function(lang) {

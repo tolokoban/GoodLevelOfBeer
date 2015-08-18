@@ -5,7 +5,7 @@
 
 html, body {
     color: #000;
-    background-color: #e6b380;
+    background-color: #3c6;
     margin: 0;
     padding: 0;
 }
@@ -43,14 +43,55 @@ body > section#welcome {
     display: block;
 }
 
+div#info-table {
+    display: block;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: auto;
+    height: auto;
+}
+
+div#info-table > div {
+    display: table;
+    position: static;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+}
+
 @media (orientation: portrait) {
     html {
         font-size: 5vw;
+    }
+    div#info-table {
+        left: 0;
+        top: 20rem;
+    }
+    div#info-table > div > div {
+        display: table-cell;
+        text-align: center;
+        vertical-align: center;
+    }
+    div#info-table > div > div > div {
+        display: inline-block;
     }
 }
 @media (orientation: landscape) {
     html {
         font-size: 5vh;
+    }
+    div#info-table {
+        left: 20rem;
+        top: 0;
+    }
+    div#info-table > div > div {
+        display: table-row;
+    }
+    div#info-table > div > div > div {
+        display: table-cell;
+        text-align: center;
+        vertical-align: center;
     }
 }
 
@@ -65,10 +106,10 @@ body > section#welcome {
 #screen > div {
     font-size: 130%;
     position: absolute;
-    width: 6rem;
-    height: 6rem;
-    margin: -3rem -3rem;
-    border: .5rem solid #000;
+    width: 4rem;
+    height: 4rem;
+    margin: -2rem -2rem;
+    border: .3rem solid #000;
     border-top: none;
     border-radius: 0 0 1rem 1rem;
     text-align: center;
@@ -101,17 +142,17 @@ button.level {
     position: absolute;
     left: 0;
     top: 0;
-    width: 6rem;
-    height: 6rem;
+    width: 4rem;
+    height: 4rem;
     background-repeat:   no-repeat;
-    background-size:     6rem 6rem;
+    background-size:     100% 100%;
     background-image:    url(main/beer.jpg);
     transition: top 1s;
 }
 
 #screen > div > div {
     position: relative;
-    line-height: 3rem;
+    line-height: 2rem;
     margin: 0;
     padding: 0;
     text-align: center;
@@ -119,7 +160,7 @@ button.level {
 }
 
 #screen > div > div.line2 {
-    line-height: 2rem;
+    line-height: 1rem;
 }
 
 #screen > div.src {
@@ -145,8 +186,8 @@ button.level {
     top: 4rem;
 }
 
-div#screen > div#A-drag, 
-div#screen > div#B-drag, 
+div#screen > div#A-drag,
+div#screen > div#B-drag,
 div#screen > div#C-drag {
     border-radius: 100%;
     width: 6rem;
@@ -158,14 +199,21 @@ div#screen > div#C-drag {
     opacity: 0;
 }
 
-div#screen > div#A-drag.show, 
-div#screen > div#B-drag.show, 
+div#screen > div#A-drag.show,
+div#screen > div#B-drag.show,
 div#screen > div#C-drag.show {
     opacity: 1;
 }
 
-#back {
-    position: absolute;
-    bottom: 0;
+div.full-screen {
+    position: fixed;
+    left: 0;
+    top: 0;
     right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
 }
