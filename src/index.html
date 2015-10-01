@@ -1,41 +1,57 @@
-<w:html app="main">
-    <script src="hand.js"></script>
-    <section id="welcome">
-        <h1>Le bon niveau de bière</h1>
-        <button onclick="Main.show('level-selection')">Commencer</button>
-    </section>
-    <section id="level-selection">
-        <h1>Choisissez votre niveau</h1>
-        <div id="levels"/>
-    </section>
-    <section id="game">
-        <div id ="screen">
-            <w:multiply x="A;B;C">
-                <div id="{{x}}">
-                    <div class="beer" id="{{x}}-beer"></div>
+<x-html app="main">
+    <head>
+        <script src="hand.js"></script>
+    </head>
+
+    <x-book id="BOOK" hash="book">
+
+        <welcome>
+            <h1>Le bon niveau de bière</h1>
+            <a href="#/book/level-selection">Commencer</a>
+        </welcome>
+
+        <level-selection>
+            <h1>Choisissez votre niveau</h1>
+            <div id="levels"/>
+        </level-selection>
+
+        <game>
+            <div id ="screen">
+                <x-loop $x="A;B;C">
+                    <tag-div>
+                        <att-id><$x/></att-id>
+                        <tag-div class="beer">
+                            <att-id><$x/>-beer"></att-id>
+                        </tag-div>
+                        <div>
+                            <tag-span class="current">
+                                <att-id><$x/>-current</att-id>
+                            </tag-span>/<tag-span class="capacity">
+                                <att-id><$x/>-capacity</att-id>
+                            </tag-span>
+                        </div>
+                        <div class="line2">
+                            <tag-span class="target"><att-id><$x/>-target</att-id></tag-span>
+                        </div>
+                    </tag-div>
+                    <tag-div><att-id><$x/>-drag</att-id></tag-div>
+                </x-loop>
+            </div>
+            <div id="info-table">
+                <div>
                     <div>
-                        <span class="current" id="{{x}}-current"></span>/<span class="capacity" id="{{x}}-capacity"></span>
+                        <div id="info"></div>
                     </div>
-                    <div class="line2">
-                        <span class="target" id="{{x}}-target"></span>
-                    </div>                    
-                </div>
-                <div id="{{x}}-drag"></div>
-            </w:multiply>
-        </div>
-        <div id="info-table">
-            <div>
-                <div>
-                    <div id="info"></div>
-                </div>
-                <div>
                     <div>
-                        <button onclick="Main.show('level-selection')">Retour</button>
+                        <div>
+                            <a href="#/book/level-selection">Retour</a>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-    <section id="success">
-    </section>
-</w:html>
+        </game>
+
+        <success>
+        </success>
+    </x-book>
+</x-html>

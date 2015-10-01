@@ -2,11 +2,11 @@ exports.config={
     name:"GoodLevelOfBeer",
     description:"Firefox OS Game in which you must transfer beer from a glass to another in order to get the correct levels in each glass.",
     author:"Tolokoban",
-    version:"1.0.51",
+    version:"1.0.71",
     major:1,
     minor:0,
-    revision:51,
-    date:new Date(2015,9,1,17,49,44)
+    revision:71,
+    date:new Date(2015,9,1,21,56,28)
 };
 var currentLang = null;
 exports.lang = function(lang) {
