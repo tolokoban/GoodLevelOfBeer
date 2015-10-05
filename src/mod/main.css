@@ -5,9 +5,10 @@
 
 html, body {
     color: #000;
-    background-color: #3c6;
     margin: 0;
     padding: 0;
+    font-samily: sans-serif;
+    font-size: 5vmin;
 }
 
 body {
@@ -19,6 +20,16 @@ body {
     width: 100%;
     height: 100%;
     overflow: hidden;
+    color: lightyellow;
+}
+
+#BOOK > div {
+    background-color: #840;
+}
+
+h1, h2, h3 {
+    color: orange;
+    text-shadow: 1px 1px 1px #000;
 }
 
 body > section {
@@ -43,15 +54,6 @@ body > section#welcome {
     display: block;
 }
 
-div#info-table {
-    display: block;
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    width: auto;
-    height: auto;
-}
-
 div#info-table > div {
     display: table;
     position: static;
@@ -64,43 +66,16 @@ div#info-table > div {
     html {
         font-size: 5vw;
     }
-    div#info-table {
-        left: 0;
-        top: 20rem;
-    }
-    div#info-table > div > div {
-        display: table-cell;
-        text-align: center;
-        vertical-align: center;
-    }
-    div#info-table > div > div > div {
-        display: inline-block;
-    }
 }
 @media (orientation: landscape) {
     html {
         font-size: 5vh;
     }
-    div#info-table {
-        left: 20rem;
-        top: 0;
-    }
-    div#info-table > div > div {
-        display: table-row;
-    }
-    div#info-table > div > div > div {
-        display: table-cell;
-        text-align: center;
-        vertical-align: center;
-    }
 }
 
 #screen {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 20rem;
-    height: 20rem;
+    width: 100vmin;
+    height: 100vmin;
 }
 
 #screen > div {
@@ -216,4 +191,17 @@ div.full-screen {
     margin: 0;
     padding: 0;
     cursor: pointer;
+}
+
+
+a.flaque {
+    display: block;
+    width: 100vmin;
+    height: 100vmin;
+    line-height: 100vmin;
+    font-size: 7vmin;    
+    font-weight: bold;
+    background-position: 40% 50%;
+    text-shadow: 0 0 6px #orange;
+    color: #420;
 }

@@ -39,12 +39,7 @@ function div(attribs, styles) {
 }
 
 function show(id) {
-  var elements = document.body.querySelectorAll("section");
-  var k, section;
-  for (k = 0 ; k < elements.length ; k++) {
-    section = elements[k];
-    section.style.display = section.getAttribute("id") == id ? "block" : "none";
-  }
+    location.hash = '/book/' + id;
 };
 
 function updateLevelsList() {

@@ -1,27 +1,34 @@
+<x-img2css src="svg/flaque.svg" class="flaque"/>
+
 <x-html app="main">
     <head>
         <script src="hand.js"></script>
     </head>
 
     <x-book id="BOOK" hash="book">
-
         <welcome>
-            <h1>Le bon niveau de bière</h1>
-            <a href="#/book/level-selection">Commencer</a>
+            <x-row class="fill wide">
+                <div>
+                    <h1>G.L.O.B.</h1>
+                    <h2>Good Level Of Beer</h2>
+                </div>
+                <a class="flaque" cell-weight="4" href="#/book/level-selection">Commencer</a>
+            </x-row>
         </welcome>
 
         <level-selection>
             <h1>Choisissez votre niveau</h1>
-            <div id="levels"/>
+            <div id="levels">...</div>
         </level-selection>
 
         <game>
-            <div id ="screen">
+            <x-row class="fill wide">
+            <div id="screen">
                 <x-loop $x="A;B;C">
                     <tag-div>
                         <att-id><$x/></att-id>
                         <tag-div class="beer">
-                            <att-id><$x/>-beer"></att-id>
+                            <att-id><$x/>-beer</att-id>
                         </tag-div>
                         <div>
                             <tag-span class="current">
@@ -49,6 +56,7 @@
                     </div>
                 </div>
             </div>
+            </x-row>
         </game>
 
         <success>
