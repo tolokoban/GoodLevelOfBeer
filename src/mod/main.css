@@ -199,9 +199,19 @@ a.flaque {
     width: 100vmin;
     height: 100vmin;
     line-height: 100vmin;
-    font-size: 7vmin;    
+    font-size: 7vmin;
     font-weight: bold;
     background-position: 40% 50%;
     text-shadow: 0 0 6px #orange;
     color: #420;
+}
+
+#face {
+    margin: 0;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100vmin;
+    height: 80vmin;
+
 }
