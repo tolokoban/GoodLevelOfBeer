@@ -1,4 +1,6 @@
 <x-img2css src="svg/flaque.svg" class="flaque"/>
+<x-img2css src="svg/back.svg" class="svg-back"/>
+<x-img2css src="svg/bar.svg" class="svg-bar"/>
 <x-img2css class="svg-sobre" src="svg/sobre2.svg"/>
 <x-img2css class="svg-mitige" src="svg/mitige-2.svg"/>
 <x-img2css class="svg-fait" src="svg/fait2.svg"/>
@@ -25,29 +27,17 @@
         </level-selection>
 
         <game>
-            <div id="face" class="svg-sobre"></div>
-            <x-row class="fill wide">
-                <x-row class="vertical" style="width:100vmin;height:100vmin">
-                    <div id="glass-0"></div>
-                    <x-row class="fill horizontal">
-                        <div id="glass-A"></div>
-                        <div id="glass-B"></div>
-                        <div id="glass-C"></div>
-                    </x-row>
-                </x-row>
-                <div id="info-table">
-                    <div>
-                        <div>
-                            <div id="info"></div>
-                        </div>
-                        <div>
-                            <div>
-                                <a href="#/book/level-selection">Retour</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </x-row>
+            <div id="game-bar" class="svg-bar">
+                <div id="game-bar-face" class="svg-sobre"></div>
+                <div id="glass-0"></div>
+                <div id="glass-A"></div>
+                <div id="glass-B"></div>
+                <div id="glass-C"></div>
+            </div>
+            <x-cell id="game-info"><div id="info"></div></x-cell>
+            <x-cell id="game-buttons">
+                <a href="#/book/level-selection" class="svg-back"></a>
+            </x-cell>
         </game>
 
         <success>
