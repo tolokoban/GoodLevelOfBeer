@@ -23,30 +23,33 @@ var Glass = function(size, content, target) {
         viewBox: "-50 -50 400 600"
     });
     svg.append(
+        // Face arrière du verre.
         Widget.svg('path', {
-            fill: 'rgb(150,150,200)',
+            fill: 'rgba(0,0,255,.4)',
             stroke: "none",
-            d: 'M0,475c0,30,300,30,300,0v-' + (size * 50)
-                + 'c0,-30,-300,-30,-300,0Z'
+            d: 'M0,' + (475 - size * 50) + arc(300,0, 150,-50) + 'v' + (size * 50)
+                + arc(-300,0, -150,50) + 'z'
         }),
+        // Trait noir pour le haut du verre.
         Widget.svg('path', {
             fill: 'none',
-            stroke: "#333",
+            stroke: "#000",
             'stroke-width': 20,
             d: 'M0,' + (475 - size * 50) + arc(300,0, 150,-50)
         })
     );
     this._liquid = Widget.svg(
-        'path',
+        'g',
         {
             stroke: 'none',
-            fill: '#fd0'
+            fill: '#ff0'
         }
     );
     svg.append(
         this._liquid,
+        // Dessin de la face avant du verre.
         Widget.svg('path', {
-            fill: 'none',
+            fill: 'rgba(0,0,255,.1)',
             stroke: "#000",
             'stroke-width': 20,
             d: 'M-25,475' + arc(350, 0, 150, 50) + 'h-25'
@@ -54,8 +57,9 @@ var Glass = function(size, content, target) {
                 + arc(-300, 0, -150, 50)
                 + line(0, size * 50) + 'h-25'
         }),
+        // Ombre sur le bas-droit du verre.
         Widget.svg('path', {
-            fill: '#000',
+            fill: '#321',
             opacity: .2,
             stroke: 'none',
             d: 'M0,475' + arc(300, -size * 50, 200, -size * 15)
@@ -119,11 +123,13 @@ Glass.prototype.constructor = Glass;
  * @return void
  */
 Glass.prototype.content = function(v) {
-    this._liquid.attr(
-        'd', 'M300,475'
-            + arc(-300,0, -150,50)
-            + 'v-' + (v * 50)
-            + this._arcs[v] + 'Z'
+    this._liquid.clear(
+        Widget.svg('path', {
+            'd': 'M300,475'
+                + arc(-300,0, -150,50)
+                + 'v-' + (v * 50)
+                + this._arcs[v] + 'Z'
+        })
     );
 };
 
