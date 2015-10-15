@@ -1,6 +1,6 @@
 {
   "name": "GoodLevelOfBeer",
-  "version": "1.0.160",
+  "version": "1.0.243",
   "description": "Firefox OS Game in which you must transfer beer from a glass to another in order to get the correct levels in each glass.",
   "launch_path": "/index.html",
   "fullscreen": "false",

@@ -5,10 +5,6 @@ var LEVELS = "CZ2BV7F26V6I25Y9P28V9X2939Y2949Z2959O28UA729D6J25ZLX2JZA829E9N28TA
 
 var Glass = require("glass");
 
-var g = new Glass(9, 7, 3);
-g.appendTo(document.getElementById('debug'));
-
-
 var glasses = {};
 var stages =
     [0, 168, 280, 400, 500, 600, 700, 800, 900, 1000, 1100, 1200, 1300, 1400, 1500, 1570, 1637];
@@ -17,6 +13,9 @@ var stages =
 var state = {src: null, dst: null};
 var currentLevel = null;
 
+/**
+ * Just a shortcut for `getElementById()`.
+ */
 function $(id) {
     var e = window.document.getElementById(id);
     if (!e) {
@@ -86,6 +85,7 @@ function updateLevelsList() {
 
 function initLevel(stage) {
     console.log("Current stage: ", stage);
+    $('game-bar-face').className = 'svg-sobre';
     var ok = stage == Storage.get("stage", 0);
     var levelNumber = Math.min(
         LEVELS.length  / 5 - 1,
@@ -172,11 +172,18 @@ function updateLevelDisplay(level) {
     $("info").innerHTML = level.steps + " / " + level.best;
 }
 
+/**
+ * If `srcIdx` == `dstIdx` we have to empty the glass `srcIdx`.
+ * Otherwise, we have to transfert the content of `srcIdx` into `dstIdx`.
+ * When  we  empty a  glass,  that  means  that the  bartender  drinks
+ * it. Then, he gets drunker.
+ */
 function move(srcIdx, dstIdx) {
     console.log("Move", srcIdx, dstIdx);
     var level = currentLevel;
     if (srcIdx == dstIdx) {
         level.current[srcIdx] = 0;
+        makeBartenderDrunker();
     } else {
         var v = Math.min(level.current[srcIdx], level.capacity[dstIdx] - level.current[dstIdx]);
         if (v == 0) return;
@@ -224,6 +231,18 @@ function move(srcIdx, dstIdx) {
         document.body.appendChild(screen);
         screen.addEventListener("touchstart", slot, false);
         screen.addEventListener("mousedown", slot, false);
+    }
+}
+
+function makeBartenderDrunker() {
+    var bartender = $('game-bar-face');
+    switch (bartender.className) {
+    case 'svg-sobre':
+        bartender.className = 'svg-mitige';
+        break;
+    case 'svg-mitige':
+        bartender.className = 'svg-fait';
+        break;        
     }
 }
 
