@@ -10,6 +10,29 @@ var Widget = require("wdg");
 var Glass = function(size, content, target) {
     Widget.call(this);
     this.addClass("glass");
+    version1.class(this, size, content, target);
+    this.content(content);
+};
+
+
+function version2(size, content, target) {
+    // Largeur du verre : 300
+    // Hauteur du verre : size * 50
+    // Point inférieur gauche du verre : (150, 550)
+    var svg = Widget.svg({
+        preserveAspectRatio: 'xMidYMid',
+        width: "100%",
+        height: "100%",
+        viewBox: "0 0 400 600"
+    });
+
+    var base = "M150," + (550 - 50 * size);
+
+    this.append(svg);
+}
+
+
+function version1(size, content, target) {
     var arcs = [];
     var k;
     for (k=0; k <= size; k++) {
@@ -77,8 +100,6 @@ var Glass = function(size, content, target) {
         }));
     }
     this.append(svg);
-
-    this.content(content);
 };
 
 
@@ -123,6 +144,8 @@ Glass.prototype.constructor = Glass;
  * @return void
  */
 Glass.prototype.content = function(v) {
+    if (!this._liquid) return;
+
     this._liquid.clear(
         Widget.svg('path', {
             'd': 'M300,475'

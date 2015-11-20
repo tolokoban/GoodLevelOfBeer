@@ -1,0 +1,22 @@
+#A, #B, #C, #D, #E, #F {
+    position: absolute;
+    box-shadow: 0 0 1px inset;
+}
+
+@media (orientation: portrait) {
+    #A, #B, #C, #D, #E, #F { width: calc(100%/2); height: calc(100%/3) }
+    #A, #B, #C { left: 0 }
+    #D, #E, #F { left: 50% }
+    #A, #D { top: 0 }
+    #B, #E { top: calc(100%/3) }
+    #C, #F { top: calc(200%/3) }
+}
+
+@media (orientation: landscape) {
+    #A, #B, #C, #D, #E, #F { width: calc(100%/3); height: calc(100%/2) }
+    #A, #B, #C { top: 0 }
+    #D, #E, #F { top: 50% }
+    #A, #D { left: 0 }
+    #B, #E { left: calc(100%/3) }
+    #C, #F { left: calc(200%/3) }
+}
