@@ -1,8 +1,14 @@
+<<<<<<< HEAD
+console.log(3.14);
+var pi = 3.14;
+exports.PI = pi;
+=======
 var Glass = require("glob.glass");
 var Widget = require("wdg");
 
 
 exports.start = function() {
+    console.log("start");
     ["A", "B", "C", "D", "E", "F"].forEach(function (id) {
         var div = new Widget({id: id});
         console.info("[test] div(#" + id + ")=...", div);
@@ -11,7 +17,7 @@ exports.start = function() {
         console.info("[test] glass=...", glass);
         div.clear(glass);
     });
-};
+}
 
 
 function randint(a, b) {
@@ -21,3 +27,4 @@ function randint(a, b) {
     }
     return a + Math.floor(Math.random() * (b - a));
 }
+>>>>>>> d1e531bcceae26f670d8c58644844ab24dca2acc

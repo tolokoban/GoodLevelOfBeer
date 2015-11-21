@@ -1,0 +1,21 @@
+<<<<<<< HEAD
+<x-html title="Test..." app="test">
+    <x-img2css class="svg-sobre" src="svg/sobre2.svg"/>
+    <x-img2css class="svg-mitige" src="svg/mitige-2.svg"/>
+    <x-img2css class="svg-fait" src="svg/fait2.svg"/>
+
+    <x-layout orientation="horizontal">
+        <div class="svg-sobre"></div>
+        <div cell-ratio="1" class="svg-mitige"></div>
+        <div class="svg-fait"></div>
+    </x-layout>
+=======
+<x-html app="test">
+    <div id="A"></div>
+    <div id="B"></div>
+    <div id="C"></div>
+    <div id="D"></div>
+    <div id="E"></div>
+    <div id="F"></div>
+>>>>>>> d1e531bcceae26f670d8c58644844ab24dca2acc
+</x-html>
