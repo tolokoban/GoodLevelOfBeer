@@ -15,12 +15,15 @@ var Glass = function(size, content, target) {
     this._size = size;
     this._content = content;
     this._target = target;
-    version2.call(this, size, content, target);
+    version2.call(this);
     this.content(content);
 };
 
 
-function version2(size, content, target) {
+function version2() {
+    var size = this._size;
+    var content = this._content;
+    var target = this._target;
     // Largeur du verre : 300
     var glassW = 300;
     // Hauteur du verre : size * 50
@@ -269,8 +272,9 @@ Glass.prototype.constructor = Glass;
  * @return void
  */
 Glass.prototype.content = function(v) {
+    console.log("content " + this._content + " -> " + v);
     this._content = v;
-    version2.call(this, this._size, this._content, this._target);
+    version2.call(this);
     /*
      this._liquid.clear(
      Svg('path', {
