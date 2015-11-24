@@ -1,5 +1,6 @@
 //require("interact");
 var Storage = require("tfw.storage").local;
+var Widget = require("wdg");
 var Glass = require("glob.glass");
 
 
@@ -308,3 +309,12 @@ interact("#glass-0")
 window.Main = {
     show: show
 };
+
+
+exports.start = function () {
+    Widget.create({id:"welcome-glass"}).clear(new Glass(9, 7, 4));
+    Widget.create({id:"welcome-tap"}).Tap(function() {
+        location.hash = "/book/level-selection";
+    });
+    console.log("Done.");
+}

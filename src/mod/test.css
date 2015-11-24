@@ -1,3 +1,10 @@
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #dba;
+}
+
 #A, #B, #C, #D, #E, #F {
     position: absolute;
     box-shadow: 0 0 1px inset;

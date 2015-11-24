@@ -8,7 +8,7 @@ html, body {
     margin: 0;
     padding: 0;
     font-samily: sans-serif;
-    font-size: 5vmin;
+    font-size: 7vmin;
 }
 
 body {
@@ -24,7 +24,7 @@ body {
 }
 
 #BOOK > div {
-    background-color: #840;
+    background-color: #999; /*#840;*/
 }
 
 h1, h2, h3 {
@@ -180,7 +180,7 @@ div#screen > div#C-drag.show {
     opacity: 1;
 }
 
-div.full-screen {
+*.full-screen {
     position: fixed;
     left: 0;
     top: 0;
@@ -194,18 +194,6 @@ div.full-screen {
 }
 
 
-a.flaque {
-    display: block;
-    width: 100vmin;
-    height: 100vmin;
-    line-height: 100vmin;
-    font-size: 7vmin;
-    font-weight: bold;
-    background-position: 40% 50%;
-    text-shadow: 0 0 6px #orange;
-    color: #420;
-}
-
 a.svg-back {
     display: inline-block;
     width: 20vmin;
@@ -216,7 +204,7 @@ a.svg-back {
 /*
 The page `game` is divided in two parts : the __bar__ and the __board__.
 The __bar__ is made of several SVG paintings.
-*/ 
+*/
 #game-bar {
     position: absolute;
     left: 0;
@@ -228,7 +216,7 @@ The __bar__ is made of several SVG paintings.
 
 #game-bar > * {
     position: absolute;
-    margin: 0;    
+    margin: 0;
 }
 
 #game-bar-face {
@@ -261,8 +249,25 @@ The __bar__ is made of several SVG paintings.
     left: 66%;
 }
 
-#game-info, #game-buttons {
+#game-info {
+    background: #666;
+    padding: 1rem;
+    border-radius: 1rem;
+}
+
+#game-info, #game-button-exit {
     position: absolute;
+}
+
+#game-info > *, #game-button-exit > * {
+    height: 100%;
+}
+
+
+#game-button-exit, #game-button-back {
+    width: 3rem;
+    height: 3rem;
+    background: lightyellow;
 }
 
 @media (orientation: landscape) {
@@ -270,26 +275,55 @@ The __bar__ is made of several SVG paintings.
         left: 100vmin;
         width: calc(100vw - 100vmin);
         top: 0;
-        height: 50vmin;
+        bottom: 0;
     }
-    #game-buttons {
-        left: 100vmin;
-        width: calc(100vw - 100vmin);
-        top: 50vmin;
-        height: 50vmin;
+    #game-button-back {
+        right: 0;
+        bottom: 0;
+    }
+    #game-button-exit {
+        right: 0;
+        top: 0;
     }
 }
 
 @media (orientation: portrait) {
-    #game-info, #game-buttons {
-        width: 50vmin;
+    #game-info {
+        left: 5%;
+        width: 90%;
         top: 100vmin;
-        height: calc(100% - 100vmin);
+        bottom: 0;
     }
     #info {
         left: 0;
     }
-    #game-buttons {
-        left: 50vmin;
+    #game-button-exit {
+        bottom: 0;
+        left: 0;
+        border-radius: 0 1rem 0 0;
     }
+    #game-button-back {
+        bottom: 0;
+        right: 0;
+        border-radius: 1rem 0 0 0;
+    }
+}
+
+
+#welcome-glob, #welcome-goodlevelofbeer {
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 100%;
+    text-align: center;
+    text-shadow: 1px 1px #000;
+}
+
+#welcome-glob {
+    top: 0;
+    font-size: 300%;
+}
+
+#welcome-goodlevelofbeer {
+    bottom: 0;
 }

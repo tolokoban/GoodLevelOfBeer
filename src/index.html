@@ -1,6 +1,5 @@
-<x-img2css src="svg/flaque.svg" class="flaque"/>
-<x-img2css src="svg/back.svg" class="svg-back"/>
-<x-img2css src="svg/bar.svg" class="svg-bar"/>
+<x-img2css class="svg-exit" src="svg/exit.svg"/>
+<!-- <x-img2css src="svg/bar.svg" class="svg-bar"/> -->
 <x-img2css class="svg-sobre" src="svg/sobre2.svg"/>
 <x-img2css class="svg-mitige" src="svg/mitige-2.svg"/>
 <x-img2css class="svg-fait" src="svg/fait2.svg"/>
@@ -8,14 +7,11 @@
 <x-html app="glob.main">
     <head><script src="hand.js"></script></head>
     <x-book id="BOOK" hash="book">
-        <welcome>
-            <x-row class="fill wide">
-                <div id="debug">
-                    <h1>G.L.O.B.</h1>
-                    <h2>Good Level Of Beer</h2>
-                </div>
-                <a class="flaque" cell-weight="4" href="#/book/level-selection">Commencer</a>
-            </x-row>
+        <welcome id="welcome">
+            <div id="welcome-glass" class="full-screen"></div>
+            <img id="welcome-tap" class="full-screen" src="css/glob.main/tap.svg" />
+            <div id="welcome-glob">G.L.O.B.</div>
+            <div id="welcome-goodlevelofbeer">Good Level Of Beer</div>
         </welcome>
 
         <level-selection>
@@ -32,9 +28,7 @@
                 <div id="glass-C"></div>
             </div>
             <x-cell id="game-info"><div id="info"></div></x-cell>
-            <x-cell id="game-buttons">
-                <a href="#/book/level-selection" class="svg-back"></a>
-            </x-cell>
+            <a href="#/book/level-selection" id="game-button-exit"><div class="svg-exit"></div></a>
         </game>
 
         <success>
